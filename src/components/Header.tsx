@@ -24,6 +24,9 @@ const Header: React.FC = () => {
         <Link href="/production-plan" passHref>
           <Button color="inherit">План виробництва</Button>
         </Link>
+        <Link href="/required-materials" passHref>
+          <Button color="inherit">Необхідні матеріали</Button>
+        </Link>
         <Link href="/procurement-plan" passHref>
           <Button color="inherit">План закупівель</Button>
         </Link>
