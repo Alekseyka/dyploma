@@ -2,8 +2,25 @@
 
 'use client'
 import React, { useState } from 'react';
-import { Container, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, MenuItem, Select, FormControl, InputLabel, SelectChangeEvent } from '@mui/material';
+import {
+  Container,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+  MenuItem,
+  Select,
+  FormControl,
+  InputLabel,
+  SelectChangeEvent,
+  Button, Box, IconButton
+} from '@mui/material';
 import { specificationData } from '@/data/specifications';
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const Specifications: React.FC = () => {
   const [selectedRoofingFelt, setSelectedRoofingFelt] = useState<string>('');
@@ -34,21 +51,33 @@ const Specifications: React.FC = () => {
       </FormControl>
       {selectedSpecification && (
         <div style={{ marginTop: '20px' }}>
+          <Box mb={2}>
+            <Button variant="contained" color="secondary" style={{ marginRight: '10px' }}>Додати сировину</Button>
+          </Box>
           <TableContainer component={Paper}>
-            <Table>
+            <Table size="small">
               <TableHead>
                 <TableRow>
-                  <TableCell sx={{ backgroundColor: 'primary.main', color: 'primary.contrastText' }}>Назва матеріалу</TableCell>
-                  <TableCell sx={{ backgroundColor: 'primary.main', color: 'primary.contrastText' }}>Кількість</TableCell>
-                  <TableCell sx={{ backgroundColor: 'primary.main', color: 'primary.contrastText' }}>Одиниця виміру</TableCell>
+                  <TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Назва матеріалу</TableCell>
+                  <TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Кількість</TableCell>
+                  <TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Одиниця виміру</TableCell>
+                  <TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Дії</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 {selectedSpecification.materials.map((material, matIndex) => (
                   <TableRow key={matIndex}>
                     <TableCell>{material.name}</TableCell>
-                    <TableCell>{material.amount}</TableCell>
+                    <TableCell>{material.amount.toFixed(1)}</TableCell>
                     <TableCell>{material.unit}</TableCell>
+                    <TableCell>
+                      <IconButton color="secondary" aria-label="edit">
+                        <EditIcon />
+                      </IconButton>
+                      <IconButton color="error" aria-label="delete">
+                        <DeleteIcon />
+                      </IconButton>
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>

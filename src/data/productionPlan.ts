@@ -12,13 +12,13 @@ export const productionPlanData: ProductionPlan[] = [
     week: "2024-07-01",
     productionLine: "Лінія 1",
     roofingFeltType: "Єврорубероїд ПромІзол",
-    quantity: 50,
+    quantity: 500,
   },
   {
     week: "2024-07-01",
     productionLine: "Лінія 2",
     roofingFeltType: "Рубероїд Стандарт",
-    quantity: 70,
+    quantity: 700,
   },
   {
     week: "2024-07-08",

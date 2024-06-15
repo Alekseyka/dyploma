@@ -4,11 +4,21 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#008080', // Teal
+      main: '#1976D2',
+    },
+    info: {
+      main: '#2196F3',
     },
     secondary: {
-      main: '#003366', // Dark Blue
+      main: '#FFC107',
+      contrastText: "#fff"
     },
+    error: {
+      main: '#f44336'
+    },
+    text: {
+      primary: '#212121'
+    }
   },
   typography: {
     fontFamily: 'Roboto, Arial, sans-serif',

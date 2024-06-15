@@ -11,19 +11,19 @@ const Nomenclature: React.FC = () => {
     <Container>
       <h1>Номенклатура</h1>
       <Box mb={2}>
-        <Button variant="contained" color="primary" style={{ marginRight: '10px' }}>Додати Матеріал</Button>
+        <Button variant="contained" color="secondary" style={{ marginRight: '10px' }}>Додати Матеріал</Button>
       </Box>
       <TableContainer component={Paper}>
-        <Table>
+        <Table size="small">
           <TableHead>
             <TableRow>
-              <TableCell sx={{ backgroundColor: 'primary.main', color: 'primary.contrastText' }}>Назва</TableCell>
-              <TableCell sx={{ backgroundColor: 'primary.main', color: 'primary.contrastText' }}>Ціна</TableCell>
-              <TableCell sx={{ backgroundColor: 'primary.main', color: 'primary.contrastText' }}>Вага</TableCell>
-              <TableCell sx={{ backgroundColor: 'primary.main', color: 'primary.contrastText' }}>Довжина</TableCell>
-              <TableCell sx={{ backgroundColor: 'primary.main', color: 'primary.contrastText' }}>Товщина</TableCell>
-              <TableCell sx={{ backgroundColor: 'primary.main', color: 'primary.contrastText' }}>Основа</TableCell>
-              <TableCell sx={{ backgroundColor: 'primary.main', color: 'primary.contrastText' }}>Дії</TableCell>
+              <TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Назва</TableCell>
+              <TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Ціна</TableCell>
+              <TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Вага</TableCell>
+              <TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Довжина</TableCell>
+              <TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Товщина</TableCell>
+              <TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Основа</TableCell>
+              <TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Дії</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -36,10 +36,10 @@ const Nomenclature: React.FC = () => {
                 <TableCell>{item.thickness}</TableCell>
                 <TableCell>{item.base}</TableCell>
                 <TableCell>
-                  <IconButton color="primary" aria-label="edit">
+                  <IconButton color="secondary" aria-label="edit">
                     <EditIcon />
                   </IconButton>
-                  <IconButton color="secondary" aria-label="delete">
+                  <IconButton color="error" aria-label="delete">
                     <DeleteIcon />
                   </IconButton>
                 </TableCell>

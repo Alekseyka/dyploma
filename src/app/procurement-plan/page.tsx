@@ -5,6 +5,7 @@ import { Container, Table, TableBody, TableCell, TableContainer, TableHead, Tabl
 import { materialsData } from '@/data/materials';
 import { productionPlanData } from '@/data/productionPlan';
 import { specificationData } from '@/data/specifications';
+import { vendorMapping } from '../../data/vendors';
 
 const calculateRequiredMaterials = () => {
   const materialMap = new Map<string, { amount: number; unit: string }>();
@@ -45,6 +46,7 @@ const calculateProcurementPlan = () => {
     return {
       ...material,
       amount: procurementAmount > 0 ? procurementAmount : 0,
+      vendor: vendorMapping[material.name] || 'Unknown',
     };
   });
 };
@@ -56,20 +58,22 @@ const ProcurementPlan: React.FC = () => {
     <Container>
       <h1>План закупівель</h1>
       <TableContainer component={Paper}>
-        <Table>
+        <Table size="small">
           <TableHead>
             <TableRow>
-              <TableCell sx={{ backgroundColor: 'primary.main', color: 'primary.contrastText' }}>Назва матеріалу</TableCell>
-              <TableCell sx={{ backgroundColor: 'primary.main', color: 'primary.contrastText' }}>Необхідна кількість</TableCell>
-              <TableCell sx={{ backgroundColor: 'primary.main', color: 'primary.contrastText' }}>Одиниця виміру</TableCell>
+              <TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Назва матеріалу</TableCell>
+              <TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Необхідна кількість</TableCell>
+              <TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Одиниця виміру</TableCell>
+              <TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Постачальник</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {procurementPlan.map((material, index) => (
               <TableRow key={index}>
                 <TableCell>{material.name}</TableCell>
-                <TableCell>{material.amount}</TableCell>
+                <TableCell>{material.amount.toFixed(1)}</TableCell>
                 <TableCell>{material.unit}</TableCell>
+                <TableCell>{material.vendor}</TableCell>
               </TableRow>
             ))}
           </TableBody>
