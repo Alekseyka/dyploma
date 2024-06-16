@@ -24,9 +24,9 @@ const Header: React.FC = () => {
         <Link href="/specifications" passHref>
           <Button color="inherit">Специфікаціі</Button>
         </Link>
-        <Link href="/orders" passHref>
-          <Button color="inherit">Замовлення</Button>
-        </Link>
+        {/*<Link href="/orders" passHref>*/}
+        {/*  <Button color="inherit">Замовлення</Button>*/}
+        {/*</Link>*/}
         {/*<Link href="/materials" passHref>*/}
         {/*  <Button color="inherit">Залишки матеріалів</Button>*/}
         {/*</Link>*/}

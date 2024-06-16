@@ -18,7 +18,7 @@ const Nomenclature: React.FC = () => {
           <TableHead>
             <TableRow>
               <TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Назва</TableCell>
-              <TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Ціна</TableCell>
+              {/*<TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Ціна</TableCell>*/}
               <TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Вага</TableCell>
               <TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Довжина</TableCell>
               <TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Товщина</TableCell>
@@ -30,10 +30,10 @@ const Nomenclature: React.FC = () => {
             {roofingFeltData.map((item, index) => (
               <TableRow key={index}>
                 <TableCell>{item.name}</TableCell>
-                <TableCell>{item.price}</TableCell>
-                <TableCell>{item.weight}</TableCell>
-                <TableCell>{item.length}</TableCell>
-                <TableCell>{item.thickness}</TableCell>
+                {/*<TableCell>{item.price}</TableCell>*/}
+                <TableCell>{item.weight} (кг.)</TableCell>
+                <TableCell>{item.length} (м.)</TableCell>
+                <TableCell>{item.thickness} (мм.)</TableCell>
                 <TableCell>{item.base}</TableCell>
                 <TableCell>
                   <IconButton color="secondary" aria-label="edit">

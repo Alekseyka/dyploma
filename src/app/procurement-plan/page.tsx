@@ -64,7 +64,7 @@ const ProcurementPlan: React.FC = () => {
               <TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Назва матеріалу</TableCell>
               <TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Необхідна кількість</TableCell>
               <TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Одиниця виміру</TableCell>
-              <TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Постачальник</TableCell>
+              {/*<TableCell sx={{ backgroundColor: 'info.main', color: 'primary.contrastText' }}>Постачальник</TableCell>*/}
             </TableRow>
           </TableHead>
           <TableBody>
@@ -73,7 +73,7 @@ const ProcurementPlan: React.FC = () => {
                 <TableCell>{material.name}</TableCell>
                 <TableCell>{material.amount.toFixed(1)}</TableCell>
                 <TableCell>{material.unit}</TableCell>
-                <TableCell>{material.vendor}</TableCell>
+                {/*<TableCell>{material.vendor}</TableCell>*/}
               </TableRow>
             ))}
           </TableBody>
